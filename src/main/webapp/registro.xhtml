@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <web-app xmlns="http://java.sun.com/xml/ns/javaee" 
 version="3.0"></web-app>
@@ -91,55 +92,83 @@ version="3.0"></web-app>
                 <div class="form-group">
                     <h:outputLabel value="Nombre Completo"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" type="text" class="form-control" id="InputName" placeholder="Juan Garza González" minlength="1" maxlength="30" title="Solo se aceptan letras y es obligatorio este campo" required="true" pattern="[a-zA-Z]"></p:inputText>                         
+                        <p:inputText class="form-control" type="text" class="form-control" id="InputName" placeholder="Juan Garza González" title="Solo se aceptan letras y es obligatorio este campo" required="true">
+                            <f:validateLongRange minimum="1" maximum="30"/>
+                             <f:validateRegex pattern="^[a-zA-Z ]*$"/>  
+                        </p:inputText>       
+                        
                     </div>
                      <br></br>
                     
                     <h:outputLabel value="RFC"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="MELM8305201H8" title="Es obligatorio este campo" required="true" maxlength="13" minlength="10" pattern="[A-Za-z0-9]"></p:inputText>                         
+                        <p:inputText class="form-control" placeholder="MELM8305201H8" title="Es obligatorio este campo" required="true">
+                             <f:validateLongRange minimum="10" maximum="13"/>
+                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/>                            
+                        </p:inputText>                         
                     </div>
                     
                     <br></br>
                      <h:outputLabel value="Estado"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="México" required="true" minlength="1" maxlength="30" pattern="[a-zA-Z]" title="Solo se aceptan letras y es obligatorio este campo"></p:inputText>                         
+                        <p:inputText class="form-control" placeholder="México" required="true"  title="Solo se aceptan letras y es obligatorio este campo">
+                           <f:validateLongRange minimum="1" maximum="30"/>
+                           <f:validateRegex pattern="^[a-zA-Z]*$"/>  
+                        </p:inputText>                         
                     </div>
                      <br></br>
                      
                       <h:outputLabel value="Municipio"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="Toluca" required="true" minlength="1" maxlength="30" pattern="[a-zA-Z]" title="Solo se aceptan letras y es obligatorio este campo"></p:inputText>                         
+                        <p:inputText class="form-control" placeholder="Toluca" required="true" title="Solo se aceptan letras y es obligatorio este campo">
+                            <f:validateLongRange minimum="1" maximum="30"/>
+                           <f:validateRegex pattern="^[a-zA-Z]*$"/>  
+                        </p:inputText>                         
                     </div>
                       <br></br>
                       
                        <h:outputLabel value="Calle"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="Anillo perimetral" required="true" minlength="1" maxlength="30" pattern="[A-Za-z0-9]" title="Se aceptan letras, números y es obligatorio este campo"></p:inputText>                         
+                        <p:inputText class="form-control" placeholder="Anillo perimetral" required="true" title="Se aceptan letras, números y es obligatorio este campo">
+                            <f:validateLongRange minimum="1" maximum="30"/>
+                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/> 
+                        </p:inputText>                         
                     </div>
                        <br></br>
                        
                         <h:outputLabel value="Número"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="106" type="number" required="true" minlength="1" maxlength="5" pattern="[0-9]" title="Solo se aceptan números y es obligatorio este campo"></p:inputText>                         
+                        <p:inputText class="form-control" placeholder="106" type="number" required="true" title="Solo se aceptan números y es obligatorio este campo">
+                            <f:validateLongRange minimum="1" maximum="5"/>
+                             <f:validateRegex pattern="^[0-9,$]*$"/> 
+                        </p:inputText>                         
                     </div>
                         <br></br>
                         
                          <h:outputLabel value="CP"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" type="number" placeholder="50010" required="true" minlength="5" maxlength="5" pattern="[0-9]" title="Solo se aceptan números y es obligatorio este campo"></p:inputText>                         
+                        <p:inputText class="form-control" type="number" placeholder="50010" required="true" title="Solo se aceptan números y es obligatorio este campo">
+                            <f:validateLongRange minimum="5" maximum="5"/>
+                             <f:validateRegex pattern="^[0-9,$]*$"/> 
+                        </p:inputText>                         
                     </div>
                          <br></br>
                          
                           <h:outputLabel value="Correo"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="juang@hotmail.com" required="true" minlength="15" maxlength="30" pattern="[a-zA-Z0-9]" title="Es obligatorio este campo"></p:inputText>                         
+                        <p:inputText class="form-control" placeholder="juang@hotmail.com" required="true" title="Es obligatorio este campo">
+                            <f:validateLongRange minimum="15" maximum="30"/>
+                             <f:validateRegex pattern="[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$"/> 
+                        </p:inputText>                         
                     </div>
                           <br></br>
                           
                            <h:outputLabel value="Contraseña"></h:outputLabel>
                     <div class="col-sm-15">
-                        <h:inputSecret class="form-control" placeholder="**********" required="true" minlength="1" maxlength="20" title="Es obligatorio este campo" ></h:inputSecret>                         
+                        <h:inputSecret class="form-control" required="true"  title="Es obligatorio este campo" >
+                            <f:validateLongRange minimum="15" maximum="20"/>
+                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/> 
+                        </h:inputSecret>                         
                     </div>
                            <br></br>
 
@@ -204,4 +233,3 @@ version="3.0"></web-app>
         
     </footer>
 </html>
-
