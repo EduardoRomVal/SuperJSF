@@ -87,13 +87,19 @@
                 
                  <h:outputLabel value="Ingresa tu usuario"/>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="jgarza@hotmail.com" minlength="20" maxlength="20" title="Es obligatorio este campo" required="true" pattern="[A-Za-z0-9]"></p:inputText>                         
+                        <p:inputText class="form-control" placeholder="jgarza@hotmail.com" title="Es obligatorio este campo" required="true" >
+                            <f:validateLongRange minimum="15" maximum="30"/>
+                             <f:validateRegex pattern="[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$"/> 
+                        </p:inputText>                         
                     </div>
                           <br></br>
                           
                            <h:outputLabel value="Ingresa tu contraseña"></h:outputLabel>
                     <div class="col-sm-15">
-                        <h:inputSecret class="form-control" placeholder="******" minlength="1" maxlength="20" title="Es obligatorio este campo" required="true"></h:inputSecret>                         
+                        <h:inputSecret class="form-control" title="Es obligatorio este campo" required="true">
+                            <f:validateLongRange minimum="15" maximum="20"/>
+                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/> 
+                        </h:inputSecret>                         
                     </div>
                            <br></br>
                 
