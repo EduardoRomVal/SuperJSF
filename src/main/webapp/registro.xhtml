@@ -92,9 +92,10 @@ version="3.0"></web-app>
                 <div class="form-group">
                     <h:outputLabel value="Nombre Completo"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" type="text" id="InputName" placeholder="Juan Garza González" title="Solo se aceptan letras y es obligatorio este campo" required="true" requiredMessage="Este campos debe estar lleno">
-                            <f:validateLongRange minimum="1" maximum="30"/>
-                             <f:validateRegex pattern="^[a-zA-Z ]*$"/>  
+                        <p:inputText class="form-control" type="text" placeholder="Juan Garza González" title="Solo se aceptan letras y es obligatorio este campo" required="true" label="Campo vacio" id="txtNombre">
+                            <f:validateLength minimum="10" maximum="30"/>
+                            <f:validateRegex pattern="^[a-zA-Z ]*$"/> 
+                             <h:message for="txtNombre" style="color: red"/> 
                         </p:inputText>       
                         
                     </div>
@@ -102,72 +103,80 @@ version="3.0"></web-app>
                     
                     <h:outputLabel value="RFC"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="MELM8305201H8" title="Es obligatorio este campo" required="true" requiredMessage="Este campos debe estar lleno">
-                             <f:validateLongRange minimum="10" maximum="13"/>
-                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/>                            
+                        <p:inputText class="form-control" placeholder="MELM8305201H8" title="Es obligatorio este campo" required="true" label="Campo vacio" id="txtRfc" >
+                            <f:validateLength minimum="10" maximum="13"/>
+                            <f:validateRegex pattern="^[A-Za-z0-9]+$"/> 
+                             <h:message for="txtRfc" style="color: red"/>                             
                         </p:inputText>                         
                     </div>
                     
                     <br></br>
                      <h:outputLabel value="Estado"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="México" required="true"  title="Solo se aceptan letras y es obligatorio este campo" requiredMessage="Este campos debe estar lleno">
-                           <f:validateLongRange minimum="1" maximum="30"/>
-                           <f:validateRegex pattern="^[a-zA-Z]*$"/>  
+                        <p:inputText class="form-control" placeholder="México" required="true"  title="Solo se aceptan letras y es obligatorio este campo" label="Campo vacio" id="txtEstado" >
+                           <f:validateLength minimum="5" maximum="30"/>
+                            <f:validateRegex pattern="^[a-zA-Z ]*$"/> 
+                             <h:message for="txtEstado" style="color: red"/>  
                         </p:inputText>                         
                     </div>
                      <br></br>
                      
                       <h:outputLabel value="Municipio"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="Toluca" required="true" title="Solo se aceptan letras y es obligatorio este campo" requiredMessage="Este campos debe estar lleno">
-                            <f:validateLongRange minimum="1" maximum="30"/>
-                           <f:validateRegex pattern="^[a-zA-Z]*$"/>  
+                        <p:inputText class="form-control" placeholder="Toluca" required="true" title="Solo se aceptan letras y es obligatorio este campo" label="Campo vacio" id="txtMunicipio" type="text" >
+                            <f:validateLength minimum="5" maximum="30"/>
+                            <f:validateRegex pattern="^[a-zA-Z ]*$"/> 
+                             <h:message for="txtMunicipio" style="color: red"/>
                         </p:inputText>                         
                     </div>
                       <br></br>
                       
                        <h:outputLabel value="Calle"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="Anillo perimetral" required="true" title="Se aceptan letras, números y es obligatorio este campo" requiredMessage="Este campos debe estar lleno">
-                            <f:validateLongRange minimum="1" maximum="30"/>
-                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/> 
+                        <p:inputText class="form-control" placeholder="Anillo perimetral" required="true" title="Se aceptan letras, números y es obligatorio este campo" label="Campo vacio" id="txtCalle" >
+                            <f:validateLength minimum="5" maximum="30"/>
+                            <f:validateRegex pattern="^[a-zA-Z ]*$"/> 
+                             <h:message for="txtCalle" style="color: red"/> 
                         </p:inputText>                         
                     </div>
                        <br></br>
                        
                         <h:outputLabel value="Número"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="106" type="number" required="true" title="Solo se aceptan números y es obligatorio este campo" requiredMessage="Este campos debe estar lleno">
-                            <f:validateLongRange minimum="1" maximum="5"/>
-                             <f:validateRegex pattern="^[0-9,$]*$"/> 
+                        <p:inputText class="form-control" placeholder="106" type="number" required="true" title="Solo se aceptan números y es obligatorio este campo" label="Campo vacio" id="txtNumero" >
+                            <f:validateLength minimum="1" maximum="5"/>
+                            <f:validateRegex pattern="^[0-9,$]*$"/> 
+                             <h:message for="txtNumero" style="color: red"/> 
                         </p:inputText>                         
                     </div>
                         <br></br>
                         
                          <h:outputLabel value="CP"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" type="number" placeholder="50010" required="true" title="Solo se aceptan números y es obligatorio este campo" requiredMessage="Este campos debe estar lleno">
-                            <f:validateLongRange minimum="5" maximum="5"/>
-                             <f:validateRegex pattern="^[0-9,$]*$"/> 
+                        <p:inputText class="form-control" type="number" placeholder="50010" required="true" title="Solo se aceptan números y es obligatorio este campo" label="Campo vacio" id="txtCp">
+                            <f:validateLength minimum="5"/>
+                            <f:validateRegex pattern="^[0-9,$]*$"/> 
+                             <h:message for="txtCp" style="color: red"/> 
                         </p:inputText>                         
                     </div>
                          <br></br>
                          
                           <h:outputLabel value="Correo"></h:outputLabel>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="juang@hotmail.com" required="true" title="Es obligatorio este campo" requiredMessage="Este campos debe estar lleno">
-                            <f:validateLongRange minimum="15" maximum="30"/>
-                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/> 
+                        <p:inputText class="form-control" placeholder="juang@hotmail.com" required="true" title="Es obligatorio este campo" label="Campo vacio" id="txtCorreo" >
+                            <f:validateLength minimum="10" maximum="30"/>
+                            <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"/> 
+                             <h:message for="txtCorreo" style="color: red"/> 
                         </p:inputText>                         
                     </div>
                           <br></br>
                           
                            <h:outputLabel value="Contraseña"></h:outputLabel>
                     <div class="col-sm-15">
-                        <h:inputSecret class="form-control" required="true"  title="Es obligatorio este campo" requiredMessage="Este campos debe estar lleno">
-                            <f:validateLongRange minimum="15" maximum="20"/>
-                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/> 
+                        <h:inputSecret class="form-control" required="true"  title="Es obligatorio este campo" label="Campo vacio" id="txtContraseña" >
+                            <f:validateLength minimum="1" maximum="30"/>
+                            <f:validateRegex pattern="^[A-Za-z0-9]+$"/>  
+                            <h:message for="txtContraseña" style="color: red"/>  
                         </h:inputSecret>                         
                     </div>
                            <br></br>
