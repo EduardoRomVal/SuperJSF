@@ -82,23 +82,27 @@
             </div>
 
 
-            <form id="form_login">
+            <h:form id="form_login">
                 
                 
                  <h:outputLabel value="Ingresa tu usuario"/>
                     <div class="col-sm-15">
-                        <p:inputText class="form-control" placeholder="jgarza@hotmail.com" title="Es obligatorio este campo" required="true" requiredMessage="Este campos debe estar lleno">
-                            <f:validateLongRange minimum="15" maximum="30"/>
-                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/> 
-                        </p:inputText>                         
+                       
+                        <p:inputText class="form-control" placeholder="jgarza@hotmail.com" required="true" label="Campo vacio" id="txtUsario" >
+                            <f:validateLength minimum="10" maximum="30"/>
+                            <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"/> 
+                             <h:message for="txtUsario" style="color: red"/>                        
+                        </p:inputText>  
+                        
                     </div>
                           <br></br>
                           
                            <h:outputLabel value="Ingresa tu contraseña"></h:outputLabel>
                     <div class="col-sm-15">
-                        <h:inputSecret class="form-control" title="Es obligatorio este campo" required="true" requiredMessage="Este campos debe estar lleno">
-                            <f:validateLongRange minimum="15" maximum="20"/>
-                             <f:validateRegex pattern="^[A-Za-z0-9]+$"/> 
+                        <h:inputSecret class="form-control" title="Es obligatorio este campo" required="true" label="Campo vacio" id="txtContra" >
+                            <f:validateLength minimum="1" maximum="30"/>
+                            <f:validateRegex pattern="^[A-Za-z0-9]+$"/>  
+                            <h:message for="txtContra" style="color: red"/>                         
                         </h:inputSecret>                         
                     </div>
                            <br></br>
@@ -114,7 +118,7 @@
                 </div>
               
               
-            </form>
+            </h:form>
         </div>
 
 
@@ -161,4 +165,3 @@
         
     </footer>
 </html>
-
